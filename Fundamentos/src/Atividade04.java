@@ -19,7 +19,7 @@ public class Atividade04 {
         } else {
             System.out.println("Seu percentual de aumento é de 15%.");
             float aumento = (15 * salario) / 100;
-            System.out.println("Seu salário tera um aumento de R$" + aumento + ".");
+            System.out.println("Seu salário tera um aumento  de R$" + aumento + ".");
         }
         
     }
