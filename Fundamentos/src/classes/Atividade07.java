@@ -10,6 +10,7 @@ public class Atividade07 {
          
         Scanner scanner = new Scanner(System.in);
         
+        
         System.out.print("Informe a quantidade de KW/h consumidos: ");
         double consumoKwh = scanner.nextDouble();
 
