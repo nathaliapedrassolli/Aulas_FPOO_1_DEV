@@ -1,4 +1,6 @@
-package classes;
+package atividaderevisao;
+
+
 
 import java.util.Scanner;
 
