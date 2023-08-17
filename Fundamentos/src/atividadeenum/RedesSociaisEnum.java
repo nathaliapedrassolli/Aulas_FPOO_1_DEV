@@ -8,21 +8,19 @@ package atividadeenum;
  *
  * @author Aluno
  */
-public class RedesSociais {
+public enum RedesSociaisEnum {
+    
+    INSTAGRAM("Instagram"), FACEBOOK("Facebook"), TWITTER("Twitter");
     
     private String redes;
 
-    public RedesSociais(String redes) {
+    private RedesSociaisEnum(String redes) {
         this.redes = redes;
     }
 
-    @Override
-    public String toString() {
-        return "RedesSociais{" + "redes=" + redes + '}';
+    public String getRedes() {
+        return this.redes;
     }
     
-       public void setRedes(String redes) {
-        this.redes = redes;
-    }
     
 }

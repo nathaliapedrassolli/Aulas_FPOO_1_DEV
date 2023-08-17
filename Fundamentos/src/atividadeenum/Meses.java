@@ -10,19 +10,20 @@ package atividadeenum;
  */
 public class Meses {
     
-     private String mes;
-     private int valor;
+   private String meses;
+   private int ano;
 
-    public Meses(String mes, int valor) {
-        this.mes = mes;
-        this.valor = valor;
+    public Meses(String meses) {
+        this.meses = meses;
     }
 
     @Override
     public String toString() {
-        return "Meses{" + "mes=" + mes + ", valor=" + valor + '}';
+        return "Meses{" + "meses=" + meses + '}';
     }
-     
-     
-
+   
+   public void setMeses(String meses) {
+        this.meses = meses;
+    }
+    
 }
