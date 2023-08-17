@@ -24,6 +24,9 @@ public class Pedido {
     public String toString() {
         return "Pedido{" + "descricao=" + descricao + ", valor=" + valor + ", status=" + status + '}';
     }
-    
+
+    void setStatus(String status) {
+        this.status = status;
+    }
     
 }
