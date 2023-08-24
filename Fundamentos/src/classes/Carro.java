@@ -9,46 +9,70 @@ package classes;
  * @author Aluno
  */
 public class Carro {
-    
     private String modelo;
     private String marca;
-    private String cor;
+    private CorEnum cor;
     private int ano;
-    private int rodas;
-    
-    private String acao;
+    private int quantidadeDeRodas;
+    private boolean ligado;
     private int velocidade;
-
-    public Carro(String modelo, String marca, String cor, int ano, int rodas) {
+    private MarchaEnum marcha;
+    
+    public Carro() {
+    }
+    
+    public Carro(String modelo, String marca, CorEnum cor, int ano, int quantidadeDeRodas, MarchaEnum marcha) {
         this.modelo = modelo;
         this.marca = marca;
         this.cor = cor;
         this.ano = ano;
-        this.rodas = rodas;
-        this.acao = "Parado";
-        this.velocidade = 0;
-    }
-    
-    
-    public void andar(int velocidade) {
-        this.acao = "Andando";
-        this.velocidade += 2;
-    }
-    
-    public void freiar() {
-        this.acao = "Freiando";
-        this.velocidade -= 1;
+        this.quantidadeDeRodas = quantidadeDeRodas;
+        this.marcha = marcha;
     }
 
-    @Override
-    public String toString() {
-        return "Carro{" + "modelo=" + modelo + ", marca=" + marca + 
-                ", cor=" + cor + ", ano=" + ano + ", rodas=" + rodas + 
-                ", acao=" + acao + ", velocidade=" + velocidade + '}';
+    public void trocarMarcha(MarchaEnum novaMarcha) {
+        if (ligado) {
+            if (podeTrocarMarcha(novaMarcha)) {
+                marcha = novaMarcha;
+                System.out.println("Marcha trocada para: " + marcha);
+            } else {
+                System.out.println("Não é recomendado trocar de " + marcha + 
+                        " para " + novaMarcha.getMarcha());
+            }
+        } else {
+            System.out.println("O carro precisa estar ligado para a troca de marcha.");
+        }
+    }
+
+    private boolean podeTrocarMarcha(MarchaEnum novaMarcha) {
+        int indiceMarchaAtual = marcha.getNumeroDaMarcha();
+        int indiceNovaMarcha = novaMarcha.getNumeroDaMarcha();
+
+        return Math.abs(indiceNovaMarcha - indiceMarchaAtual) == 1;
     }
     
+    public void ligar() {
+        if (!ligado) {
+            System.out.println("Carro ligado.");
+            ligado = true;
+        } else {
+            System.out.println("O carro já está ligado.");
+        }
+    }
     
+    public void acelerar(int aumento) {
+        if (ligado) {
+            velocidade += aumento;
+            System.out.println("Acelerando. Velocidade atual: " + velocidade + "km/h");
+        } else {
+            System.out.println("O carro precisa estar ligado para acelerar.");
+        }
+    }
     
-    
-    
+    @Override
+    public String toString() {
+        return "Carro{" + "modelo=" + modelo + ", marca=" + marca + ", cor=" 
+                + cor + ", ano=" + ano + ", quantidadeDeRodas=" 
+                + quantidadeDeRodas + '}';
+    }
 }

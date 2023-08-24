@@ -29,9 +29,8 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" + "nome=" + nome + ", email=" + email + 
-                ", ra=" + ra + ", acao=" + acao + '}';
+        return "Aluno{" + "nome=" + nome + ", email=" + email
+                + ", ra=" + ra + ", acao=" + acao + '}';
     }
-       
-    
+
 }
