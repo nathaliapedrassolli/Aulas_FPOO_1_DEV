@@ -96,6 +96,7 @@ public class Cliente implements AluguelFilme, CadastroCliente {
             
         }
         
+        
         if (email.contains("@gmail.com")) {
             
             System.out.println("O e-mail " + email + " é do Google.");
